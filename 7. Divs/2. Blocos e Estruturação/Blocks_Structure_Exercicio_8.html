@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 8</title>
+    <style>
+        .responsive-div {
+            background-color: lightcoral;
+            padding: 20px;
+            width: 50%;
+            transition: width 0.5s;
+        }
+        @media screen and (max-width: 600px) {
+            .responsive-div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Div que muda de tamanho com a largura da janela do navegador -->
+    <div class="responsive-div">
+        <p>Redimensione a janela do navegador para ver o efeito.</p>
+    </div>
+</body>
+</html>
