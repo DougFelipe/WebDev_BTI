@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 7</title>
+    <style>
+        .float-column {
+            float: left;
+            width: 50%;
+            padding: 20px;
+            text-align: center;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="float-column" style="background-color:lightgreen;">
+            <p>Coluna flutuante 1</p>
+        </div>
+        <div class="float-column" style="background-color:lightcoral;">
+            <p>Coluna flutuante 2</p>
+        </div>
+    </div>
+</body>
+</html>
