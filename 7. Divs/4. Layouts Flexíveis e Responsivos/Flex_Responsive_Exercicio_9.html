@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 9 - Colunas Ajustáveis</title>
+    <style>
+        .column-container {
+            display: flex;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .column-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="column-container">
+        <div class="column">Coluna 1</div>
+        <div class="column">Coluna 2</div>
+        <div class="column">Coluna 3</div>
+    </div>
+</body>
+</html>

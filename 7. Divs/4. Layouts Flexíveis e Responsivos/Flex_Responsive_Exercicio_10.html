@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 10 - Blog Responsivo</title>
+    <style>
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .article {
+            flex-basis: 60%;
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .sidebar {
+            flex-basis: 30%;
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        @media (max-width: 800px) {
+            .article, .sidebar {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="article">
+            <h2>Artigo Principal</h2>
+            <p>Conteúdo do artigo...</p>
+        </div>
+        <div class="sidebar">
+            <h3>Barra Lateral</h3>
+            <p>Conteúdo adicional...</p>
+        </div>
+    </div>
+</body>
+</html>
