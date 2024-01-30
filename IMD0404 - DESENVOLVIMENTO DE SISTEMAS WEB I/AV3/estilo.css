@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 320px; /* Ajuste a largura máxima conforme necessário */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 10px; /* Ajuste a margem inferior conforme necessário */
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* Desconta a margem dos lados */
+    padding: 10px;
+    margin: 0 10px; /* Margem horizontal de 10px */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-grow: 1; /* Faz com que os botões tenham o mesmo tamanho */
+}
+
+#entrar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#limpar {
+    background-color: #f44336;
+    color: white;
+}
+
+#esqueciSenha {
+    display: block;
+    margin-top: 20px;
+    color: #069;
+    text-decoration: none;
+}
