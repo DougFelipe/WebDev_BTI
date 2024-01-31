@@ -32,7 +32,7 @@ h1 {
 
 .input-group label {
     display: block;
-    text-align: left;
+    text-align: center;
     margin-bottom: 5px;
 }
 
@@ -73,4 +73,41 @@ h1 {
     margin-top: 20px;
     color: #069;
     text-decoration: none;
+}
+
+#cadastroContainer
+{
+    width: 100%;
+    max-width: 320px; /* Ajuste a largura máxima conforme necessário */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#adicionar, #enviar
+{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.botoes-cadastro
+{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.botoes-cadastro button
+{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
 }

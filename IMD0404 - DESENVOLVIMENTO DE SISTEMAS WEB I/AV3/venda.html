@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Página de venda</title>
+</head>
+
+<body>
+
+    <div id="cadastroContainer">
+
+        <h3>Cadastro de Passageiros</h3>
+
+        <form id="cadastroPassageiro" action="">
+
+            <div class="input-group">
+
+                <label for="nome"><strong>Nome: </strong></label>
+                <input type="text" id="nome" name="nome">
+                <br><br>
+
+                <label for="cpf"><strong>CPF: </strong></label>
+                <input type="text" id="cpf" name="cpf">
+                <br><br>
+
+                <label for="endereco"><strong>Endereço: </strong></label>
+                <input type="text" id="endereco" name="endereco">
+                <br><br>
+
+            </div>
+
+            <div id>
+
+                <form id="opcoes">
+                    <input type="radio" id="opcao1" name="opcao" value="1ª Classe">
+                    <label for="opcao1">1ª Classe</label>
+
+                    <input type="radio" id="opcao2" name="opcao" value="2ª Classe">
+                    <label for="opcao2">2ª Classe</label>
+
+                    <input type="radio" id="opcao3" name="opcao" value="3ª Classe">
+                    <label for="opcao3">3ª Classe</label>
+                </form>
+
+
+            </div>
+
+            <br>
+
+            <div class="botoes-cadastro">
+
+                <button type="button" id="adicionar" onclick="cadastrarPassageiro()">Adicionar Passageiro</button>
+                <br>
+                <button type="button" id="enviar">Enviar</button>
+
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+<script src="venda.js"></script>
+
+</html>
