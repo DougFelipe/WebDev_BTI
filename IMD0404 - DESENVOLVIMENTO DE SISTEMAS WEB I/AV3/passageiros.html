@@ -1,15 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passageiros do IMD air-lines</title>
     <link rel="stylesheet" href="passageiros.css">
 </head>
+
 <body>
+
     <div class="search-container">
+
         <h1>Passageiros do IMD air-lines</h1>
+
         <input type="text" id="searchInput" placeholder="Digite o valor da pesquisa">
+
         <select id="searchType">
             <option value="all">Listar todos</option>
             <option value="nome">Nome</option>
@@ -17,10 +24,16 @@
             <option value="endereco">Endereço</option>
             <option value="classe">Classe</option>
         </select>
-        <button id="searchButton">Buscar</button>
-    </div>
-    <div id="passengersList"></div>
 
-    <script src="passageiros.js"></script>
+        <button id="searchButton" onclick="filtrar(document.getElementById('searchType').value ,document.getElementById('searchInput').value)">Buscar</button>
+
+    </div>
+
+    <div id="passengersList"> </div>
+
+
+    <script src="venda.js"></script>
+
 </body>
+
 </html>

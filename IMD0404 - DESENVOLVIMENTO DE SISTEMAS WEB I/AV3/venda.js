@@ -7,7 +7,21 @@ class Passageiro {
     }
 }
 
-var passageiros = [];
+
+// Função para carregar os passageiros do localStorage
+function carregarPassageiros() {
+    // Verificar se existe algo armazenado no localStorage
+    if (localStorage.getItem('passageiros')) {
+        // Converter de volta para um array de objetos JavaScript
+        return JSON.parse(localStorage.getItem('passageiros'));
+    } else {
+        // Se não houver dados, retornar um array vazio
+        return [];
+    }
+}
+
+// Carregar passageiros existentes no localStorage ao iniciar a aplicação
+var passageiros = carregarPassageiros();
 
 function verificarInputs() {
 
@@ -61,6 +75,9 @@ function cadastrarPassageiro(nome, cpf, endereco, classe) {
     var passageiro = new Passageiro(nome, cpf, endereco, classe);
     passageiros.push(passageiro);
 
+    // Armazenar o vetor de passageiros no localStorage
+    localStorage.setItem('passageiros', JSON.stringify(passageiros));
+
     // Limpa os campos após o cadastro
     document.getElementById('nome').value = '';
     document.getElementById('cpf').value = '';
@@ -78,8 +95,41 @@ function cadastrarPassageiro(nome, cpf, endereco, classe) {
         console.log(pessoa);
     }*/
 
-    //Teste para ver o JSON no console.log
-    var jsonPassageiros = JSON.stringify(passageiros);
+}
 
-    console.log(jsonPassageiros);
+//Teste para ver o JSON no console.log
+/*var jsonPassageiros = JSON.stringify(passageiros);
+
+var passageirosJS = JSON.parse(jsonPassageiros)*/
+
+function filtrar(tipo, valor) 
+{
+    
+    if (tipo === 'all') 
+    {
+
+        const listaPassageiros = document.getElementById('passengersList');
+        listaPassageiros.innerHTML = ''; // Limpa a lista anterior
+
+        // Utiliza forEach para iterar sobre o array de passageiros
+        passageiros.forEach((passageiro, indice) => 
+        {
+            // Cria um elemento div para cada passageiro e define seu conteúdo HTML
+            const div = document.createElement('div');
+            div.className = 'passenger';
+            div.innerHTML = `
+            <strong>Passageiro ${indice + 1}:</strong><br>
+            <strong>Nome:</strong> ${passageiro.nome}<br>
+            <strong>CPF:</strong> ${passageiro.cpf}<br>
+            <strong>Endereço:</strong> ${passageiro.endereco}<br>
+            <strong>Classe:</strong> ${passageiro.classe}<br>`;
+            // Adiciona a div criada ao elemento pai
+            listaPassageiros.appendChild(div);
+
+        });
+
+
+    }
+
+
 }
