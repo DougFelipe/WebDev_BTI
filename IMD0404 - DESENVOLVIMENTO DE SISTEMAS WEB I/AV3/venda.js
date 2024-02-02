@@ -102,6 +102,18 @@ function cadastrarPassageiro(nome, cpf, endereco, classe) {
 
 var passageirosJS = JSON.parse(jsonPassageiros)*/
 
+function filtrarPassageiros(criterio, consulta) {
+    return passageiros.filter(function(passageiro) {
+        // Verifica se a propriedade existe e não é undefined antes de chamar toLowerCase
+        if (passageiro[criterio] !== undefined) {
+            return passageiro[criterio].toLowerCase().includes(consulta.toLowerCase());
+        }
+        return false; // Se a propriedade for undefined, retorna false para o filtro
+    });
+}
+
+
+
 function filtrar(tipo, valor) 
 {
     
@@ -131,5 +143,40 @@ function filtrar(tipo, valor)
 
     }
 
+    else
+    {
+        // Definindo searchType e searchInput com base nos parâmetros tipo e valor
+        const searchType = tipo; // O tipo de campo a ser filtrado (ex: 'nome', 'cpf', etc.)
+        const searchInput = valor; // O valor a ser procurado
+        const passageirosFiltrados = filtrarPassageiros(searchType, searchInput);
+        exibirPassageirosFiltrados(passageirosFiltrados);
+
+    }
+
 
 }
+
+const exibirPassageirosFiltrados = function(passageirosFiltrados) {
+    const listaPassageiros = document.getElementById('passengersList');
+    listaPassageiros.innerHTML = ''; // Limpa a lista anterior
+
+    // Verifica se há passageiros após o filtro
+    if (passageirosFiltrados.length > 0) {
+        // Se sim, exibe os passageiros filtrados
+        passageirosFiltrados.forEach((passageiro, indice) => {
+            const div = document.createElement('div');
+            div.className = 'passenger';
+            div.innerHTML = `
+                <strong>Passageiro ${indice + 1}:</strong><br>
+                <strong>Nome:</strong> ${passageiro.nome}<br>
+                <strong>CPF:</strong> ${passageiro.cpf}<br>
+                <strong>Endereço:</strong> ${passageiro.endereco}<br>
+                <strong>Classe:</strong> ${passageiro.classe}<br>
+            `;
+            listaPassageiros.appendChild(div);
+        });
+    } else {
+        // Se não, informa que nenhum passageiro foi encontrado
+        listaPassageiros.innerHTML = '<div>Nenhum passageiro encontrado.</div>';
+    }
+};
